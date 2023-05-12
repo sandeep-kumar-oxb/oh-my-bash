@@ -528,14 +528,7 @@ function prompt_emacsdir {
 ## Main prompt
 
 function build_prompt {
-  [[ ! -z ${AG_EMACS_DIR+x} ]] && prompt_emacsdir
-  prompt_status
-  #[[ -z ${AG_NO_HIST+x} ]] && prompt_histdt
-  [[ -z ${AG_NO_CONTEXT+x} ]] && prompt_context
-  if [[ ${OMB_PROMPT_SHOW_PYTHON_VENV-} ]]; then
-    prompt_virtualenv
-    prompt_condaenv
-  fi
+  prompt_virtualenv
   prompt_dir
   prompt_git
   prompt_hg
